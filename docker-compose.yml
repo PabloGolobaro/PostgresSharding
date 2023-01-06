@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db1:
+    image: sameersbn/postgresql:10-2
+    container_name: postgresql_db1
+    environment:
+      DB_USER: $DB_USER
+      DB_PASS: $DB_PASS
+      DB_NAME: $DB_NAME
+    restart: always
+    ports:
+      - ${PORT1}:5432
+
+  db2:
+    image: sameersbn/postgresql:10-2
+    container_name: postgresql_db2
+    environment:
+      DB_USER: $DB_USER
+      DB_PASS: $DB_PASS
+      DB_NAME: $DB_NAME
+    restart: always
+    ports:
+      - ${PORT2}:5432
+
+
